@@ -1,0 +1,189 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+apply plugin: 'cargo'
+
+apply plugin: 'tomcat'
+
+buildscript {
+    repositories {
+    	maven { url = 'http://dl.bintray.com/khoulaiz/gradle-plugins' }
+    	jcenter()
+    	mavenCentral()
+        add(new org.apache.ivy.plugins.resolver.URLResolver()) {
+            name = 'GitHub Gradle Tomcat Plugin'
+            addArtifactPattern 'http://cloud.github.com/downloads/[organisation]/[module]/[module]-[revision].[ext]'
+        }
+    }
+ 
+    dependencies {
+        classpath (group: 'org.gradle.api.plugins', name: 'gradle-cargo-plugin', version: '0.6.1')
+        classpath 'bmuschko:gradle-tomcat-plugin:0.9.5'
+        
+    }
+}
+
+ String configPath = project.rootProject.projectDir.absolutePath.toString() + "webdefault.xml"
+ 
+   ext {
+	javaVersion = '1.7'
+	springVersion = '3.2.2.RELEASE'
+	slf4jVersion = '1.7.5'
+        logbackVersion = '1.0.13'
+    }
+
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+
+
+List loggers = [
+    "org.slf4j:slf4j-api:${slf4jVersion}",
+    "org.slf4j:jcl-over-slf4j:${slf4jVersion}",
+    "org.slf4j:log4j-over-slf4j:${slf4jVersion}",
+    "org.slf4j:jul-to-slf4j:${slf4jVersion}",
+    "ch.qos.logback:logback-core:${logbackVersion}",
+    "ch.qos.logback:logback-classic:${logbackVersion}"
+]
+
+def springframework = [
+        "org.springframework:spring-core:${springVersion}",
+        "org.springframework:spring-context:${springVersion}",
+        "org.springframework:spring-web:${springVersion}",
+        "org.springframework:spring-webmvc:${springVersion}",
+        "org.springframework:spring-aop:${springVersion}",
+        "org.springframework:spring-tx:${springVersion}",
+        "org.springframework:spring-aspects:${springVersion}",
+        "org.springframework:spring-jdbc:${springVersion}",
+        "org.springframework:spring-orm:${springVersion}",
+        "org.springframework:spring-test:${springVersion}"
+]
+
+
+
+repositories {
+     mavenLocal()
+     mavenCentral()
+     jcenter()
+   
+    maven { url = 'http://dl.bintray.com/khoulaiz/gradle-plugins' }
+    
+}
+
+	
+
+dependencies {
+	
+	springframework.collect{
+		compile(it){
+			exclude(group:"cglib", module:"cglib")
+		}
+	}
+    compile 'javax.jms:jms:1.1'
+    compile 'org.springframework.flex:spring-flex:1.5.2.RELEASE'
+
+  
+    compile 'org.springframework:spring-jms:3.2.4.RELEASE'
+            
+            
+	compile 'commons-lang:commons-lang:2.6'
+    compile 'commons-collections:commons-collections:3.2.1'
+    
+            
+	compile loggers
+	compile 'org.aspectj:aspectjweaver:1.7.4'
+	compile 'mysql:mysql-connector-java:5.1.27'
+       	compile 'com.google.guava:guava:15.0'
+	compile 'joda-time:joda-time:2.3'
+	compile 'org.apache.ibatis:ibatis-sqlmap:2.3.4.726'
+	compile 'com.jolbox:bonecp:0.8.0.RELEASE'
+	
+
+	compile 'org.slf4j:slf4j-api:1.7.5'
+	
+            
+	
+	testCompile "junit:junit:4.11"
+	providedCompile "javax.servlet:javax.servlet-api:3.0.1"
+	providedCompile  'org.projectlombok:lombok:0.12.0'
+	
+	  def tomcatVersion = '7.0.11'
+        tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}"
+        tomcat "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}"
+        tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}") {
+            exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
+        }
+
+        def cargoVersion = '1.3.3'
+        cargo "org.codehaus.cargo:cargo-core-uberjar:$cargoVersion",
+              "org.codehaus.cargo:cargo-ant:$cargoVersion"
+                
+	 [configurations.runtime, configurations.default]*.exclude(module: 'commons-logging')
+}
+
+task webProject(description: "web") {
+	  createDir = {
+	      println "create dir: $it"
+	      it.mkdirs();
+	  }
+	     sourceSets.main.java.srcDirs.each createDir
+	     sourceSets.main.resources.srcDirs.each createDir
+	     sourceSets.test.java.srcDirs.each createDir
+	     sourceSets.test.resources.srcDirs.each createDir
+
+	    createDir webAppDir
+		createDir new File(webAppDir, '/WEB-INF/views');
+
+	processResources {
+		   from(sourceSets.main.resources.srcDirs) {
+		  }
+	    }
+    }
+
+ cargoRedeployRemote {
+        dependsOn war
+    }
+
+    cargoDeployRemote {
+        dependsOn war
+    }
+
+    cargo {
+        containerId = 'tomcat7x'
+        port = 8080
+
+        deployable {
+            context = "${project.name}"
+        }
+
+        remote {
+            hostname = '192.168.13.209'
+            username = 'ykyoon'
+            password = 'qwer12#$'
+        }
+    }
+
+
+eclipse {
+	 classpath {
+		  downloadSources = true
+		  defaultOutputDir = file("${buildDir}/classes/main")
+	}
+	wtp {
+		component {
+			contextPath = "/ffa"
+			}
+		facet {
+			facet name:  'jst.web', version: '3.0' // Servlet Spec Version
+			facet name:  'jst.java', version: '1.7' // Java Version
+		}
+	}
+}
+
+
+
+
+tasks.eclipse.dependsOn cleanEclipse
+tasks.eclipse.dependsOn webProject

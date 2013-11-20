@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+	<wb-module deploy-name="ffa">
+		<property name="context-root" value="/ffa"/>
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
+		<wb-resource deploy-path="/" source-path="src/main/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.springframework/spring-expression/3.2.4.RELEASE/jar/edde2efe828f5890f57aa153f55c5c994cf04489/spring-expression-3.2.4.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/02.work/java_libs/org/springframework/spring-web/3.2.2.RELEASE/spring-web-3.2.2.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.slf4j/log4j-over-slf4j/1.7.5/jar/bf39ccad53c1f695f32d610ce7f0e5bf9895b262/log4j-over-slf4j-1.7.5.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.springframework/spring-core/3.2.4.RELEASE/jar/d36bed1dbca3f725bb5a4405c6115adc8c99d1a9/spring-core-3.2.4.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.springframework/spring-aspects/3.2.2.RELEASE/jar/a2ff50083ca7113a8a15735b0a3917794dcf4ffc/spring-aspects-3.2.2.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/ch.qos.logback/logback-classic/1.0.13/jar/6b56ec752b42ccfa1415c0361fb54b1ed7ca3db6/logback-classic-1.0.13.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/02.work/java_libs/org/springframework/spring-orm/3.2.2.RELEASE/spring-orm-3.2.2.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.slf4j/slf4j-api/1.7.5/jar/6b262da268f8ad9eff941b25503a9198f0a0ac93/slf4j-api-1.7.5.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/com.google.guava/guava/15.0/bundle/ed727a8d9f247e2050281cb083f1c77b09dcb5cd/guava-15.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.slf4j/jul-to-slf4j/1.7.5/jar/d2b0f76abde33a62f1dbc19a9da726ffe9a0180e/jul-to-slf4j-1.7.5.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/ch.qos.logback/logback-core/1.0.13/jar/dc6e6ce937347bd4d990fc89f4ceb469db53e45e/logback-core-1.0.13.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/02.work/java_libs/commons-lang/commons-lang/2.6/commons-lang-2.6.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.aspectj/aspectjweaver/1.7.4/jar/d9d511e417710492f78bb0fb291a629d56bf4216/aspectjweaver-1.7.4.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.springframework/spring-beans/3.2.4.RELEASE/jar/47b156296a5e9875faa7421b6e25b419a530f52d/spring-beans-3.2.4.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.springframework/spring-tx/3.2.4.RELEASE/jar/6da00a9bc5ee808211dafc2f642129476a0d63cb/spring-tx-3.2.4.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.springframework/spring-test/3.2.2.RELEASE/jar/e0c63d05fa1f48d70db01398f4bdcaaf3ac6bfc0/spring-test-3.2.2.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/02.work/java_libs/aopalliance/aopalliance/1.0/aopalliance-1.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/joda-time/joda-time/2.3/jar/56498efd17752898cfcc3868c1b6211a07b12b8f/joda-time-2.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.slf4j/jcl-over-slf4j/1.7.5/jar/cd5970bd13fa85f7bed41ca606d6daf7cbf1365/jcl-over-slf4j-1.7.5.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/com.jolbox/bonecp/0.8.0.RELEASE/bundle/cec24ee9345b3678472bb1b8fdd6aa6b9428beb8/bonecp-0.8.0.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.springframework/spring-jms/3.2.4.RELEASE/jar/9c88ef8663cb617ca972bb06391a2968e6de5ea9/spring-jms-3.2.4.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/02.work/java_libs/org/springframework/spring-webmvc/3.2.2.RELEASE/spring-webmvc-3.2.2.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.springframework/spring-context/3.2.4.RELEASE/jar/4e6d5edcaeeed6cb332b90fbe3713f003d28188c/spring-context-3.2.4.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/02.work/java_libs/org/springframework/spring-context-support/3.2.2.RELEASE/spring-context-support-3.2.2.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/mysql/mysql-connector-java/5.1.27/jar/2e4fbf71af3fa214951aa32bb6b39076e4e01b6f/mysql-connector-java-5.1.27.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/02.work/java_libs/org/apache/ibatis/ibatis-sqlmap/2.3.4.726/ibatis-sqlmap-2.3.4.726.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/jins/.gradle/caches/artifacts-26/filestore/org.springframework/spring-aop/3.2.4.RELEASE/jar/773389e56c871ab558b87629b3e7c73fc4bf0ec/spring-aop-3.2.4.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/02.work/java_libs/org/springframework/spring-jdbc/3.2.2.RELEASE/spring-jdbc-3.2.2.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/02.work/java_libs/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+	</wb-module>
+</project-modules>
